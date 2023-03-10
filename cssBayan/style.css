@@ -1,18 +1,21 @@
 html {
   font-size: 62.5%;
+  overflow-x: hidden;
+  margin-right: calc(-1 * (100vw - 100%));
 }
 
-/* 62,5% */
 * {
   box-sizing: border-box;
 }
 
 body {
-  background-color: antiquewhite;
+  background-color: #F6F6EC;
   font-size: 1.2rem;
+  font-family: 'Montserrat', Arial, Helvetica, sans-serif;
 }
 
 h1 {
+  font-size: 2rem;
   text-align: center;
 }
 
@@ -20,66 +23,26 @@ h1 {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 90%;
+  max-width: 100%;
   margin: auto;
-  font-weight: bold;
-  font-family: Arial, Helvetica, sans-serif;
   color: blue;
 }
-
-/* .bayan:hover {
-  color: black;
-} */
-
-/* .bayan__item:hover .item-content {
-  height: auto;
-  padding-top: 1%;
-  margin-bottom: 2%;
-  visibility: visible;
-  opacity: 1;
-} */
 
 .bayan__item:has(.item-input:checked) {
   color: black;
 }
 
 .bayan__item:has(.item-input:checked) .title-ico {
-  opacity: 1;
   background-image: url('./img/close-transform.svg');
-  transform: rotate(45deg);
-  transform-origin: center;
-  background-repeat: no-repeat;
-  background-position: top;
-  min-width: 5vw;
-  min-height: 5vh;
-  margin-left: auto;
-  margin-right: 0;
-  transition:  all 0.3s ease;
+  transform: rotate(0.13turn);
 }
-
-/* .bayan__item:active .title-ico {
-  background: url('./img/close-colored.svg') no-repeat;
-  background-size: 100%;
-} */
-
-/* .bayan__item:hover .item-content .item-image,
-.bayan__item:hover .item-content .item-image img {
-  height: auto;
-  width: auto;
-  opacity: 1;
-}
-
-.bayan:hover .title-ico{
-  opacity: 1;
-} */
 
 .item {
   display: block;
   width: 100%;
   font-size: 1.6rem;
-  border-top: 0.1em solid black;
+  border-top: 0.1em solid #D9DEE4;
   padding: 0.5em 0.5em 0 0;
-  /* cursor: pointer; */
 }
 
 .title {
@@ -91,15 +54,17 @@ h1 {
 
 .title-text {
   padding-right: 5%;
+  flex-grow: 0;
+  transition: all 0.3s;
 }
 
 .title-ico {
   opacity: 1;
   background-image: url('./img/close-colored.svg');
   background-repeat: no-repeat;
-  background-position: top;
-  min-width: 5vw;
-  min-height: 5vh;
+  background-position: center;
+  width: 1rem;
+  height: 1rem;
   transition:  all 0.3s ease;
 }
 
@@ -109,14 +74,6 @@ h1 {
   appearance: none;
   margin: 0;
 }
-
-/* .bayan__item:hover .title-ico {
-  transform: rotate(45deg);
-}
-
-.bayan__item:has(.item-input:checked) .title-ico{
-  transform: rotate(45deg);
-} */
 
 .item-input:checked ~ .item-content {
   color: black;
@@ -135,7 +92,7 @@ h1 {
 
 .item-input:checked ~ .item-content .item-image img {
   height: auto;
-  width: auto;
+  width: 70%;
   animation: 1s show ease;
   opacity: 1;
 }
@@ -162,10 +119,99 @@ h1 {
 .item-image img {
   height: 0;
   width: 0;
-  max-width: 0;
   opacity: 0;
-  max-width: 40%;
   /* transition: opacity 0.5s ease-in; */
+}
+
+
+ @media (min-width:426px) {
+  .bayan {
+    width: 50%;
+  }
+  .item-input:checked ~ .item-content .item-image img {
+    width: 70%;
+    animation: 1s show ease;
+  }
+}
+
+ @media (min-width:821px) {
+  h1 {
+    font-size: 3rem;
+  }
+
+  .bayan {
+    max-width: 40%;
+  }
+
+ .item {
+    cursor: pointer;
+  }
+  .title-text {
+    font-size: 20px;
+  }
+
+  .title-ico {
+    opacity: 0;
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .bayan:hover .title-ico {
+    background: url('./img/close.svg');
+    opacity: 1;
+  }
+
+  .bayan:hover .title-text {
+    color: black;
+  }
+
+  .bayan__item:hover .title-ico {
+    transform: rotate(0.13turn);
+  }
+
+  .bayan__item:hover .item-content {
+    height: auto;
+    width: auto;
+    /* padding-top: 1%;
+    margin-bottom: 2%; */
+    visibility: visible;
+    opacity: 1;
+  }
+
+  .bayan__item:hover .item-content .item-image {
+    height: auto;
+    width: auto;
+    opacity: 1;
+  }
+
+  .bayan__item:hover .item-content .item-image img {
+    height: auto;
+    width: 70%;
+    animation: 1s show ease;
+    opacity: 1;
+  }
+
+  .bayan__item:active .title-text {
+    color: blue;
+  }
+
+  .bayan__item:active .title-ico {
+    background: url('./img/close-colored.svg');
+    transform: rotate(0.13turn);
+  }
+}
+
+@media (min-width:1920px) {
+  h1 {
+    font-size: 4rem;
+  }
+  .title-text {
+    font-size: 30px;
+  }
+  .title-ico {
+    width: 2rem;
+    height: 2rem;
+  }
 }
 
 @keyframes show {
@@ -174,7 +220,7 @@ h1 {
     max-width: 0;
   }
   to {
+    max-width: 70%;
     opacity: 1;
-    max-width: 40%;
   }
 }
