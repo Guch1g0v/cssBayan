@@ -1,82 +1,106 @@
 html {
-  font-size: 10px;
+  font-size: 62.5%;
+}
+
+/* 62,5% */
+* {
+  box-sizing: border-box;
 }
 
 body {
   background-color: antiquewhite;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
 }
 
-* {
-  box-sizing: border-box;
+h1 {
+  text-align: center;
 }
 
 .bayan {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  max-width: 500px;
+  max-width: 90%;
   margin: auto;
   font-weight: bold;
   font-family: Arial, Helvetica, sans-serif;
   color: blue;
 }
 
-.bayan:hover {
+/* .bayan:hover {
+  color: black;
+} */
+
+/* .bayan__item:hover .item-content {
+  height: auto;
+  padding-top: 1%;
+  margin-bottom: 2%;
+  visibility: visible;
+  opacity: 1;
+} */
+
+.bayan__item:has(.item-input:checked) {
   color: black;
 }
 
-
-
-.bayan__item:hover .item-content {
-  height: auto;
-  padding-top: 5px;
-  margin-bottom: 30px;
-  visibility: visible;
+.bayan__item:has(.item-input:checked) .title-ico {
   opacity: 1;
+  background-image: url('./img/close-transform.svg');
+  transform: rotate(45deg);
+  transform-origin: center;
+  background-repeat: no-repeat;
+  background-position: top;
+  min-width: 5vw;
+  min-height: 5vh;
+  margin-left: auto;
+  margin-right: 0;
+  transition:  all 0.3s ease;
 }
 
-.bayan__item:active {
-  color: blue;
-}
-.bayan__item:active .title-ico {
-  background: url('./img/close-colored.svg') no-repeat center;
-}
+/* .bayan__item:active .title-ico {
+  background: url('./img/close-colored.svg') no-repeat;
+  background-size: 100%;
+} */
 
-.bayan__item:hover .item-content .item-image,
+/* .bayan__item:hover .item-content .item-image,
 .bayan__item:hover .item-content .item-image img {
   height: auto;
   width: auto;
   opacity: 1;
 }
+
 .bayan:hover .title-ico{
   opacity: 1;
-}
+} */
 
-.item-title {
+.item {
   display: block;
   width: 100%;
   font-size: 1.6rem;
-  border-top: 1px solid black;
-  padding: 10px 5px 0;
-  cursor: pointer;
+  border-top: 0.1em solid black;
+  padding: 0.5em 0.5em 0 0;
+  /* cursor: pointer; */
 }
 
 .title {
   width: auto;
   display: flex;
   justify-content: space-between;
-  margin-bottom: -10px;
+  margin-bottom: -0.5em;
+}
+
+.title-text {
+  padding-right: 5%;
 }
 
 .title-ico {
-  opacity: 0;
-  background: url('./img/close.svg') no-repeat center;
-  width: 20px;
-  height: 15px;
-  margin-left: auto;
-  margin-right: 0;
-  transition: all 0.3s;
+  opacity: 1;
+  background-image: url('./img/close-colored.svg');
+  background-repeat: no-repeat;
+  background-position: top;
+  min-width: 5vw;
+  min-height: 5vh;
+  transition:  all 0.3s ease;
 }
 
 .item-input {
@@ -86,44 +110,45 @@ body {
   margin: 0;
 }
 
-.bayan__item:hover .title-ico {
+/* .bayan__item:hover .title-ico {
   transform: rotate(45deg);
 }
 
 .bayan__item:has(.item-input:checked) .title-ico{
   transform: rotate(45deg);
-}
+} */
 
 .item-input:checked ~ .item-content {
   color: black;
   height: auto;
-  padding-top: 5px;
-  margin-bottom: 30px;
+  margin-top: -1rem;
+  margin-bottom: 1em;
   visibility: visible;
   opacity: 1;
 }
 
-.item-input:checked ~ .item-content .item-image,
-.item-input:checked ~ .item-content .item-image img {
+.item-input:checked ~ .item-content .item-image {
   height: auto;
   width: auto;
   opacity: 1;
 }
-.title-ico:has(.item-input:checked) {
 
+.item-input:checked ~ .item-content .item-image img {
+  height: auto;
+  width: auto;
+  animation: 1s show ease;
+  opacity: 1;
 }
 
 .item-content {
   height: 0;
   visibility:hidden;
   opacity: 0;
-  padding-top: 0px;
-  margin-bottom: 0px;
+  padding-top: 0;
+  margin-bottom: 0;
   font-size: 1.3rem;
-  transition: all 0.5s;
+  transition: all 0.3s;
 }
-
-
 
 .item-image {
   height: 0;
@@ -132,15 +157,24 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: width 0.3s;
-}
+ }
 
 .item-image img {
-  transition: all 1s;
   height: 0;
   width: 0;
+  max-width: 0;
   opacity: 0;
   max-width: 40%;
+  /* transition: opacity 0.5s ease-in; */
 }
 
-
+@keyframes show {
+  from {
+    opacity: 0;
+    max-width: 0;
+  }
+  to {
+    opacity: 1;
+    max-width: 40%;
+  }
+}
