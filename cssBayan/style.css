@@ -28,6 +28,7 @@ body {
 
 .main {
   flex: 1 0 auto;
+  margin-bottom: 4rem;
 }
 
 .footer {
@@ -117,70 +118,56 @@ h1 {
 
 .item-input:checked ~ .item-content {
   color: black;
-  height: auto;
-  margin-top: -1rem;
-  margin-bottom: 1em;
+  max-height: 100%;
+  margin-bottom: 5rem;
   visibility: visible;
   opacity: 1;
 }
 
-.item-input:checked ~ .item-content .item-image {
-  height: auto;
-  width: auto;
-  opacity: 1;
-}
-
 .item-input:checked ~ .item-content .item-image img {
-  height: auto;
-  width: 70%;
-  animation: 1s show ease;
+  max-height: 100%;
+  max-width: 80%;
   opacity: 1;
 }
 
 .item-content {
-  height: 0;
-  visibility:hidden;
+  display: block;
+  max-height: 0;
   opacity: 0;
   padding-top: 0;
   margin-bottom: 0;
+  visibility:hidden;
   font-size: 1.3rem;
-  transition: all 0.3s;
+  transition: all 1s ease-in;
 }
 
 .item-image {
-  height: 0;
-  opacity: 0;
-  width: 0;
   display: flex;
   justify-content: center;
   align-items: center;
  }
 
 .item-image img {
-  height: 0;
-  width: 0;
+  max-height: 0;
+  max-width: 0;
   opacity: 0;
-  /* transition: opacity 0.5s ease-in; */
+  transition: all 0.8s ease-out;
 }
 
 
  @media (min-width:426px) {
   .bayan {
-    width: 50%;
-  }
-  .item-input:checked ~ .item-content .item-image img {
-    width: 70%;
-    animation: 1s show ease;
+    width: 80%;
   }
 }
 
  @media (min-width:820px) {
-  h1 {
-    font-size: 3rem;
+  .bayan {
+    width: 60%;
   }
 
-  .bayan {
-    max-width: 40%;
+  h1 {
+    font-size: 3rem;
   }
 
   .title-text {
@@ -235,22 +222,15 @@ h1 {
   }
 
   .bayan__item:hover .item-content {
-    height: auto;
-    width: auto;
+    max-height: 100%;
+    margin-bottom: 5rem;
     visibility: visible;
     opacity: 1;
   }
 
-  .bayan__item:hover .item-content .item-image {
-    height: auto;
-    width: auto;
-    opacity: 1;
-  }
-
   .bayan__item:hover .item-content .item-image img {
-    height: auto;
-    width: 70%;
-    animation: 1s show ease;
+    max-height: 100%;
+    max-width: 80%;
     opacity: 1;
   }
 
@@ -262,26 +242,18 @@ h1 {
     background: url('./img/close-colored.svg');
     transform: rotate(0.13turn);
   }
+
   .github:hover {
     color: #f6ac3f;
-    text-shadow: 0 0 5px black;
+    text-shadow: 0 0 0.5rem black;
   }
+
   .logo {
     opacity: 0.75;
-    margin-right: 10px;
+    margin-right: 2rem;
   }
-  .logo:hover {
-    opacity: 1;
-  }
-}
 
-@keyframes show {
-  from {
-    opacity: 0;
-    max-width: 0;
-  }
-  to {
-    max-width: 70%;
+  .logo:hover {
     opacity: 1;
   }
 }
