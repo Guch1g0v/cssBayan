@@ -157,9 +157,8 @@ h1 {
 }
 
 .item-image:active img {
-  scale: 1.5;
+  transform: scale(1.5);
 }
-
 
  @media (min-width:426px) {
   .bayan {
