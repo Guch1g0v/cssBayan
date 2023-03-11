@@ -42,7 +42,7 @@ body {
 
 .logo {
   display: block;
-  width: 10rem;
+  width: 7rem;
   transition: all 0.3s;
 }
 
@@ -91,6 +91,8 @@ h1 {
   display: flex;
   justify-content: space-between;
   margin-bottom: -0.5em;
+  padding-left: 1rem;
+  font-size: 1.6rem;
 }
 
 .title-text {
@@ -170,8 +172,8 @@ h1 {
     font-size: 3rem;
   }
 
-  .title-text {
-    font-size: 20px;
+  .title {
+    font-size: 2rem;
   }
 
   .title-ico {
@@ -184,8 +186,8 @@ h1 {
   h1 {
     font-size: 4rem;
   }
-  .title-text {
-    font-size: 30px;
+  .title {
+    font-size: 3rem;
   }
   .title-ico {
     width: 2rem;
