@@ -143,17 +143,36 @@ h1 {
     max-width: 40%;
   }
 
- .item {
-    cursor: pointer;
-  }
   .title-text {
     font-size: 20px;
   }
 
   .title-ico {
-    opacity: 0;
     width: 1.5rem;
     height: 1.5rem;
+  }
+}
+
+@media (min-width:1920px) {
+  h1 {
+    font-size: 4rem;
+  }
+  .title-text {
+    font-size: 30px;
+  }
+  .title-ico {
+    width: 2rem;
+    height: 2rem;
+  }
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .item {
+    cursor: pointer;
+  }
+
+  .title-ico {
+    opacity: 0;
   }
 
   .bayan:hover .title-ico {
@@ -172,8 +191,6 @@ h1 {
   .bayan__item:hover .item-content {
     height: auto;
     width: auto;
-    /* padding-top: 1%;
-    margin-bottom: 2%; */
     visibility: visible;
     opacity: 1;
   }
@@ -198,19 +215,6 @@ h1 {
   .bayan__item:active .title-ico {
     background: url('./img/close-colored.svg');
     transform: rotate(0.13turn);
-  }
-}
-
-@media (min-width:1920px) {
-  h1 {
-    font-size: 4rem;
-  }
-  .title-text {
-    font-size: 30px;
-  }
-  .title-ico {
-    width: 2rem;
-    height: 2rem;
   }
 }
 
