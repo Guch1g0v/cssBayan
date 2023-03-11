@@ -156,6 +156,10 @@ h1 {
   transition: all 0.7s ease-in;
 }
 
+.item-image:active img {
+  scale: 1.5;
+}
+
 
  @media (min-width:426px) {
   .bayan {
@@ -165,9 +169,11 @@ h1 {
 
  @media (min-width:820px) {
   .bayan {
-    width: 60%;
+    width: 600px;
   }
-
+  .item-input:checked ~ .item-content .item-image img {
+    max-width: 50%;
+  }
   h1 {
     font-size: 3rem;
   }
@@ -183,6 +189,10 @@ h1 {
 }
 
 @media (min-width:1920px) {
+  .bayan {
+    width: 1200px
+  }
+
   h1 {
     font-size: 4rem;
   }
@@ -232,7 +242,7 @@ h1 {
 
   .bayan__item:hover .item-content .item-image img {
     max-height: 100%;
-    max-width: 80%;
+    max-width: 50%;
     opacity: 1;
   }
 
