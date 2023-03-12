@@ -149,7 +149,6 @@ h1 {
   margin-bottom: 2rem;
   visibility: visible;
   opacity: 1;
-  color: #000000;
 }
 
 .item-input:checked ~ .item-content img {
@@ -223,7 +222,7 @@ h1 {
   }
 
   .bayan:hover .title-text {
-    color: black;
+    color: #000000;
   }
 
   .bayan__item:hover .title-ico {
@@ -256,6 +255,11 @@ h1 {
     transform: rotate(0.13turn);
   }
 
+  .bayan__item:has(.item-input:checked):active .title-ico {
+    background-image: url('./img/close-colored.svg');
+    transform: rotate(0.13turn);
+  }
+
   .github:hover {
     color: #f6ac3f;
     text-shadow: 0 0 0.5rem #000000;
@@ -268,9 +272,5 @@ h1 {
 
   .logo:hover {
     opacity: 1;
-  }
-
-  .item-image img:active  {
-    transform: scale(1.5);
   }
 }
