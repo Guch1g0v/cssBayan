@@ -75,6 +75,8 @@ h1 {
   font-size: 1.6rem;
   border-top: 0.1em solid #D9DEE4;
   padding: 0.5em 0.5em 0 0;
+  opacity: 1;
+  transition: opacity 0.5s;
 }
 
 .title {
@@ -241,6 +243,10 @@ h1 {
     opacity: 1;
   }
 
+  .item:active  {
+    opacity: 0.5;
+  }
+
   .bayan__item:active .title-text {
     color: #0000ff;
   }
@@ -264,7 +270,7 @@ h1 {
     opacity: 1;
   }
 
-  .item-image:active img {
+  .item-image img:active  {
     transform: scale(1.5);
   }
 }
