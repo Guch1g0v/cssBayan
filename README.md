@@ -1,2 +1,2 @@
 # cssBayan
-[Accordion on pure css](https://guchigow.github.io/cssBayan/cssBayan/)
+[Accordion on pure css](https://guch1g0v.github.io/cssBayan/cssBayan/)
